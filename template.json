@@ -1,18 +1,67 @@
 {
   "package": {
     "dependencies": {
-      "@testing-library/jest-dom": "^5.14.1",
-      "@testing-library/react": "^13.0.0",
-      "@testing-library/user-event": "^13.2.1",
-      "@types/jest": "^27.0.1",
-      "@types/node": "^16.7.13",
-      "@types/react": "^18.0.0",
-      "@types/react-dom": "^18.0.0",
-      "typescript": "^4.4.2",
-      "web-vitals": "^2.1.0"
+      "@fortawesome/fontawesome-svg-core": "6.4.2",
+      "@fortawesome/free-regular-svg-icons": "6.4.2",
+      "@fortawesome/free-solid-svg-icons": "6.4.2",
+      "@fortawesome/react-fontawesome": "0.2.0",
+      "@react-spring/web": "^9.7.3",
+      "@tanstack/react-query": "4.33.0",
+      "@tanstack/react-query-devtools": "4.33.0",
+      "axios": "1.5.0",
+      "classnames": "2.3.2",
+      "dayjs": "1.11.9",
+      "formik": "2.4.3",
+      "lodash": "4.17.21",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "react-router-dom": "6.15.0",
+      "react-scripts": "5.0.1",
+      "tailwindcss": "3.3.3",
+      "uuid": "9.0.0",
+      "web-vitals": "3.4.0",
+      "yup": "1.2.0"
     },
+    "devDependencies": {
+      "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+      "@testing-library/jest-dom": "6.1.2",
+      "@testing-library/react": "14.0.0",
+      "@testing-library/user-event": "14.4.3",
+      "@types/jest": "29.5.4",
+      "@types/lodash": "4.14.197",
+      "@types/node": "20.5.6",
+      "@types/react": "18.2.21",
+      "@types/react-dom": "18.2.7",
+      "@types/uuid": "9.0.2",
+      "msw": "1.2.4",
+      "prettier": "3.0.2",
+      "prettier-plugin-tailwindcss": "0.5.3",
+      "typescript": "4.9.5"
+    },
+    "scripts": {
+      "test:ci": "CI=true react-scripts test --coverage --silent --verbose --color"
+    },
+    "proxy": "https://api.dev.leanstacks.net",
     "eslintConfig": {
       "extends": ["react-app", "react-app/jest"]
+    },
+    "jest": {
+      "coveragePathIgnorePatterns": [
+        "node_modules",
+        "__fixtures__",
+        "src/test",
+        "src/index.tsx",
+        "src/reportWebVitals.ts"
+      ],
+      "coverageThreshold": {
+        "global": {
+          "branches": 10,
+          "functions": 10,
+          "lines": 10,
+          "statements": 10
+        }
+      },
+      "transformIgnorePatterns": ["/node_modules/(?!(axios)/)"]
     }
   }
 }
