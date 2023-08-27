@@ -1,6 +1,51 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
+
+This project was bootstrapped with the [Create React App](https://github.com/facebook/create-react-app) template [@leanstacks/typescript](https://github.com/leanstacks/cra-template-typescript).
+
+The technology stack includes:
+
+- Create React App - the foundation
+- React Router Dom - routing
+- React Query - data manipulation and caching
+- Axios - http client
+- Formik - form management
+- Yup - validation
+- Tailwind - styling
+- Font Awesome - icons
+- React Spring - animation
+- Lodash - utility functions
+- DayJS - date utility functions
+- Testing Library React - tests
+- MSW - API mocking
+- TypeScript
+
+## Getting Started
+
+After creating the project, perform the following steps.
+
+### `.nvmrc`
+
+Update the `.nvmrc` file to your desired version of Node.js.
+
+### `package.json`
+
+When CRA creates a new React project from a template, it prefixes all dependencies in the `package.json` file with a caret `^`.  We recommend removing the caret symbol from all dependencies, this pinning the dependency to the specific version listed in `package.json`.
+
+### (Re)initialize Dependencies
+
+After updating the `.nvmrc` or `package.json` files, reinstall the project dependencies.
+
+```shell
+npm ci
+```
+
+### Code Formatting
+
+The project includes a configuration file for the [Prettier](https://prettier.io/docs/en/configuration.html) code formatter. This allows all project contributors to share the same code formatting rules.
+
+Adjust the Prettier configuration as desired.
 
 ## Available Scripts
 
@@ -19,6 +64,12 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm test:ci`
+
+Executes the test runner in `CI` mode and produces a coverage report. With `CI` mode enabled, the test runner executes all tests one time and prints a summary report to the console. A code coverage report is printed to the console immediately following the test summary.
+
+A detailed test coverage report is created in the `./coverage` directory.
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -31,7 +82,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> **WARNING:** this is a one-way operation. Once you `eject`, you can’t go back!
+
+> **TIP:** if you are thinking of ejecting, consider using [`craco`](https://craco.js.org/) instead.
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
