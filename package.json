@@ -1,0 +1,26 @@
+{
+  "name": "@leanstacks/cra-template-typescript",
+  "version": "1.0.0-rc.1",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "typescript"
+  ],
+  "description": "LeanStacks base TypeScript template for Create React App.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leanstacks/cra-template-typescript.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "bugs": {
+    "url": "https://github.com/leanstacks/cra-template-typescript/issues"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ]
+}
