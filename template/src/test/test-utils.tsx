@@ -9,10 +9,13 @@ import {
 import { PropsWithChildren } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
+import { ConfigContextProvider } from 'providers/ConfigProvider';
 
 const WithAllProviders = ({ children }: PropsWithChildren): JSX.Element => {
   return (
-    <MemoryRouter>{children}</MemoryRouter>
+    <ConfigContextProvider>
+      <MemoryRouter>{children}</MemoryRouter>
+    </ConfigContextProvider>
   );
 };
 
