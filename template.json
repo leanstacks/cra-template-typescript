@@ -1,6 +1,7 @@
 {
   "package": {
     "dependencies": {
+      "@babel/plugin-proposal-private-property-in-object": "7.21.11",
       "@fortawesome/fontawesome-svg-core": "6.4.2",
       "@fortawesome/free-regular-svg-icons": "6.4.2",
       "@fortawesome/free-solid-svg-icons": "6.4.2",
@@ -23,7 +24,6 @@
       "yup": "1.2.0"
     },
     "devDependencies": {
-      "@babel/plugin-proposal-private-property-in-object": "7.21.11",
       "@testing-library/jest-dom": "6.1.2",
       "@testing-library/react": "14.0.0",
       "@testing-library/user-event": "14.4.3",
@@ -61,7 +61,7 @@
           "statements": 0
         }
       },
-      "transformIgnorePatterns": ["/node_modules/(?!(axios)/)"]
+      "transformIgnorePatterns": ["/node_modules/(?!axios)/", "/node_modules/(?!copy-anything)/"]
     }
   }
 }

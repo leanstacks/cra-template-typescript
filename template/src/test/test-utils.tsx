@@ -8,13 +8,24 @@ import {
 } from '@testing-library/react';
 import { PropsWithChildren } from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { ConfigContextProvider } from 'providers/ConfigProvider';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
 
 const WithAllProviders = ({ children }: PropsWithChildren): JSX.Element => {
   return (
     <ConfigContextProvider>
-      <MemoryRouter>{children}</MemoryRouter>
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>{children}</MemoryRouter>
+      </QueryClientProvider>
     </ConfigContextProvider>
   );
 };

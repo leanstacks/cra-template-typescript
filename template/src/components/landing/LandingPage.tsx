@@ -1,7 +1,10 @@
 import { useConfig } from 'providers/ConfigProvider';
+import { useGetApiInfo } from 'hooks/useGetApiInfo';
 
 function LandingPage() {
   const config = useConfig();
+
+  const {data: apiInfo } = useGetApiInfo();
 
   return (
     <div data-testid="page-landing">
@@ -34,7 +37,8 @@ function LandingPage() {
       </div>
 
       <div className="font-mono text-xs uppercase text-slate-500">
-        Version: {config.REACT_APP_VERSION_ID}
+        <div>App Version: {config.REACT_APP_VERSION_ID}</div>
+        <div>API Version: {apiInfo?.release}</div>
       </div>
     </div>
   );
