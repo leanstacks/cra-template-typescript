@@ -11,6 +11,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { ConfigContextProvider } from 'providers/ConfigProvider';
+import { SettingsContextProvider } from 'providers/SettingsProvider';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,7 +25,9 @@ const WithAllProviders = ({ children }: PropsWithChildren): JSX.Element => {
   return (
     <ConfigContextProvider>
       <QueryClientProvider client={queryClient}>
-        <MemoryRouter>{children}</MemoryRouter>
+        <SettingsContextProvider>
+          <MemoryRouter>{children}</MemoryRouter>
+        </SettingsContextProvider>
       </QueryClientProvider>
     </ConfigContextProvider>
   );

@@ -4,11 +4,11 @@ import { useGetApiInfo } from 'hooks/useGetApiInfo';
 function LandingPage() {
   const config = useConfig();
 
-  const {data: apiInfo } = useGetApiInfo();
+  const { data: apiInfo } = useGetApiInfo();
 
   return (
     <div data-testid="page-landing">
-      <h1 className="mb-4 text-4xl font-bold text-slate-700">Welcome to React!</h1>
+      <h1 className="mb-4 text-4xl font-bold">Welcome to React!</h1>
 
       <div className="mb-4">
         This project was created with{' '}
@@ -36,7 +36,7 @@ function LandingPage() {
         site.
       </div>
 
-      <div className="font-mono text-xs uppercase text-slate-500">
+      <div className="text-sm uppercase">
         <div>App Version: {config.REACT_APP_VERSION_ID}</div>
         <div>API Version: {apiInfo?.release}</div>
       </div>
