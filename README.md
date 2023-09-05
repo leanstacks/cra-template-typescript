@@ -1,6 +1,6 @@
-# cra-template-typescript
+# @leanstacks/cra-template-typescript
 
-A Create React App template using TypeScript and a curated technology stack.
+A Create React App template using TypeScript and a curated technology stack used by the LeanStacks organization.
 
 To use this template, add `--template @leanstacks/typescript` when creating a new app.
 
@@ -14,7 +14,7 @@ npx create-react-app my-app --template @leanstacks/typescript
 yarn create react-app my-app --template @leanstacks/typescript
 ```
 
-The technologies in this CRA template include:
+This CRA template extends the base CRA template with the following technologies:
 
 - TypeScript Language
 - React Router
