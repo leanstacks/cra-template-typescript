@@ -26,7 +26,7 @@ function App() {
               <AxiosContextProvider>
                 <RouterProvider router={router} />
               </AxiosContextProvider>
-              <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+              <ReactQueryDevtools initialIsOpen={false} />
             </Theme>
           </SettingsContextProvider>
         </QueryClientProvider>

@@ -7,7 +7,7 @@ function ErrorPage() {
   const getMessage = (error: unknown): string => {
     let message = 'An unknown problem has occurred.';
     if (isRouteErrorResponse(error)) {
-      message = `${error.statusText}. ${error.error?.message}.`;
+      message = `${error.statusText}`;
     } else if (error instanceof Error) {
       message = error.message;
     }
