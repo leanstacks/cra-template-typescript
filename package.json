@@ -10,9 +10,11 @@
   "description": "LeanStacks base TypeScript template for Create React App.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/leanstacks/cra-template-typescript.git"
+    "url": "https://github.com/leanstacks/cra-template-typescript"
   },
+  "author": "LeanStacks",
   "license": "MIT",
+  "homepage": "https://github.com/leanstacks/cra-template-typescript#readme",
   "engines": {
     "node": ">=14"
   },
