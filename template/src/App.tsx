@@ -2,11 +2,11 @@ import { RouterProvider } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-import { router } from 'components/routers/Router';
-import { ConfigContextProvider } from 'providers/ConfigProvider';
-import { SettingsContextProvider } from 'providers/SettingsProvider';
-import Theme from 'components/common/theme/Theme';
-import { AxiosContextProvider } from 'providers/AxiosProvider';
+import ConfigContextProvider from 'providers/ConfigProvider';
+import SettingsContextProvider from 'providers/SettingsProvider';
+import AxiosContextProvider from 'providers/AxiosProvider';
+import { router } from 'components/Router/Router';
+import Theme from 'components/Theme/Theme';
 
 const queryClient = new QueryClient({
   defaultOptions: {

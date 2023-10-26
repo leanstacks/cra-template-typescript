@@ -3,7 +3,7 @@ import { renderHook as renderHookWithoutWrapper } from '@testing-library/react';
 import { render, renderHook, waitFor } from 'test/test-utils';
 import { server } from 'test/mocks/server';
 
-import { ConfigContextProvider, useConfig } from 'providers/ConfigProvider';
+import ConfigContextProvider, { useConfig } from 'providers/ConfigProvider';
 
 describe('ConfigProvider', () => {
   beforeAll(() => {

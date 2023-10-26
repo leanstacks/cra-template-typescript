@@ -1,12 +1,12 @@
-import { Settings } from "hooks/useGetSettings";
+import { Settings } from 'api/useGetSettings';
 
 export enum QueryKeys {
-  ApiInfo = 'ApiInfo',
-  Settings = 'Settings'
+  Settings = 'Settings',
+  Users = 'Users',
 }
 
-export enum StorageKeys  {
-  Settings = 'leanstacks.appName.settings'
+export enum StorageKeys {
+  Settings = 'leanstacks.appName.settings',
 }
 
 export const DEFAULT_SETTINGS: Settings = {

@@ -6,8 +6,8 @@ import {
 import { renderHook, waitFor } from 'test/test-utils';
 import { server } from 'test/mocks/server';
 
-import { SettingsContextProvider, useSettings } from 'providers/SettingsProvider';
-import * as UseGetSettings from 'hooks/useGetSettings';
+import SettingsContextProvider, { useSettings } from 'providers/SettingsProvider';
+import * as UseGetSettings from 'api/useGetSettings';
 import { settingsFixture } from '__fixtures__/settings';
 import { UseQueryResult } from '@tanstack/react-query';
 
@@ -18,7 +18,7 @@ describe('SettingsProvider', () => {
     useGetSettingsSpy.mockReturnValue({
       data: settingsFixture,
       isSuccess: true,
-    } as unknown as UseQueryResult<UseGetSettings.Settings, unknown>);
+    } as unknown as UseQueryResult<UseGetSettings.Settings, Error>);
   });
 
   it('should render successfully', () => {
@@ -41,7 +41,7 @@ describe('useSettings', () => {
     useGetSettingsSpy.mockReturnValue({
       data: settingsFixture,
       isSuccess: true,
-    } as unknown as UseQueryResult<UseGetSettings.Settings, unknown>);
+    } as unknown as UseQueryResult<UseGetSettings.Settings, Error>);
   });
 
   afterEach(() => {

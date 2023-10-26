@@ -22,7 +22,7 @@ const customAxios = axios.create({
 
 const AxiosContext = React.createContext<AxiosInstance>(customAxios);
 
-export function AxiosContextProvider(props: PropsWithChildren) {
+const AxiosContextProvider = ({ children }: PropsWithChildren) => {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -44,13 +44,13 @@ export function AxiosContextProvider(props: PropsWithChildren) {
   }, []);
 
   return (
-    <AxiosContext.Provider value={customAxios}>
-      {isReady && <>{props.children}</>}
-    </AxiosContext.Provider>
+    <AxiosContext.Provider value={customAxios}>{isReady && <>{children}</>}</AxiosContext.Provider>
   );
-}
+};
 
-export const useAxios = () => {
+export default AxiosContextProvider;
+
+export const useAxios = (): AxiosInstance => {
   const context = useContext(AxiosContext);
   if (!context) {
     throw new Error('useAxios hook must be used within an AxiosContextProvider');

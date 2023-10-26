@@ -1,8 +1,8 @@
 import { renderHook, waitFor } from 'test/test-utils';
 import { server } from 'test/mocks/server';
 
-import { useSetSettings } from 'hooks/useSetSettings';
-import { Settings } from 'hooks/useGetSettings';
+import { useSetSettings } from 'api/useSetSettings';
+import { Settings } from 'api/useGetSettings';
 
 describe('useSetSettings', () => {
   const originalLocalStorage = global.localStorage;

@@ -1,10 +1,11 @@
 import { useConfig } from 'providers/ConfigProvider';
-import { useGetApiInfo } from 'hooks/useGetApiInfo';
+import { useGetUsers } from 'api/useGetUsers';
+import { Text, TextVariant } from '@leanstacks/react-common';
 
-function LandingPage() {
+const LandingPage = () => {
   const config = useConfig();
 
-  const { data: apiInfo } = useGetApiInfo();
+  const { data: users, isSuccess: usersSuccess } = useGetUsers();
 
   return (
     <div data-testid="page-landing">
@@ -36,12 +37,16 @@ function LandingPage() {
         site.
       </div>
 
+      <div className="mb-4">
+        <Text variant={TextVariant.Heading2}>Users</Text>
+        {usersSuccess && users.map((user) => <div key={user.id}>{user.name}</div>)}
+      </div>
+
       <div className="text-sm uppercase">
         <div>App Version: {config.REACT_APP_VERSION_ID}</div>
-        <div>API Version: {apiInfo?.release}</div>
       </div>
     </div>
   );
-}
+};
 
 export default LandingPage;

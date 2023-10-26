@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import StandardLayout from 'components/common/layouts/StandardLayout';
-import ErrorPage from 'components/common/errors/ErrorPage';
-import LandingPage from 'components/landing/LandingPage';
+import StandardLayout from 'components/Layout/StandardLayout';
+import ErrorPage from 'pages/ErrorPage/ErrorPage';
+import LandingPage from 'pages/LandingPage/LandingPage';
 
 export const routes = [
   {
@@ -13,7 +13,7 @@ export const routes = [
       {
         index: true,
         element: <LandingPage />,
-      }
+      },
     ],
   },
 ];

@@ -12,7 +12,7 @@ const configSchema: ObjectSchema<Config> = Yup.object({
 
 const ConfigContext = React.createContext<Config | undefined>(undefined);
 
-export function ConfigContextProvider(props: PropsWithChildren) {
+const ConfigContextProvider = ({ children }: PropsWithChildren) => {
   const [isReady, setIsReady] = useState<boolean>(false);
   const [config, setConfig] = useState<Config>();
 
@@ -31,13 +31,13 @@ export function ConfigContextProvider(props: PropsWithChildren) {
   }, []);
 
   return (
-    <ConfigContext.Provider value={config}>
-      {isReady && <>{props.children}</>}
-    </ConfigContext.Provider>
+    <ConfigContext.Provider value={config}>{isReady && <>{children}</>}</ConfigContext.Provider>
   );
-}
+};
 
-export const useConfig = () => {
+export default ConfigContextProvider;
+
+export const useConfig = (): Config => {
   const context = useContext(ConfigContext);
   if (!context) {
     throw new Error('useConfig hook must be used within a ConfigContextProvider');

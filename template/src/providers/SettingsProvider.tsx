@@ -1,10 +1,10 @@
 import React, { PropsWithChildren, useContext, useMemo } from 'react';
 
-import { Settings, useGetSettings } from 'hooks/useGetSettings';
+import { Settings, useGetSettings } from 'api/useGetSettings';
 
 const SettingsContext = React.createContext<Settings | undefined>(undefined);
 
-export function SettingsContextProvider({ children }: PropsWithChildren) {
+const SettingsContextProvider = ({ children }: PropsWithChildren) => {
   const { data: settings, isLoading } = useGetSettings();
 
   const value = useMemo(() => settings, [settings]);
@@ -14,9 +14,11 @@ export function SettingsContextProvider({ children }: PropsWithChildren) {
       {!isLoading && <>{children}</>}
     </SettingsContext.Provider>
   );
-}
+};
 
-export const useSettings = () => {
+export default SettingsContextProvider;
+
+export const useSettings = (): Settings => {
   const context = useContext(SettingsContext);
   if (!context) {
     throw new Error('useSettings hook must be used within a SettingsContextProvider');

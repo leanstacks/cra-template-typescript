@@ -1,9 +1,9 @@
 import { rest } from 'msw';
 
-import { infoFixture } from '__fixtures__/info';
+import { usersFixture } from '__fixtures__/users';
 
 export const handlers = [
-  rest.get('/api/info', (req, res, ctx) => {
-    return res(ctx.json(infoFixture));
-  })
+  rest.get('https://jsonplaceholder.typicode.com/users', (req, res, ctx) => {
+    return res(ctx.json(usersFixture));
+  }),
 ];

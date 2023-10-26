@@ -1,7 +1,7 @@
 import { renderHook, waitFor } from 'test/test-utils';
 import { server } from 'test/mocks/server';
 
-import { useGetSettings } from 'hooks/useGetSettings';
+import { useGetSettings } from 'api/useGetSettings';
 import { settingsFixture } from '__fixtures__/settings';
 
 describe('useGetSettings', () => {
