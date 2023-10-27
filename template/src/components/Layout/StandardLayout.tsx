@@ -1,8 +1,13 @@
 import { Outlet } from 'react-router-dom';
+import classNames from 'classnames';
 
-const StandardLayout = () => {
+import { PropsWithClassName, PropsWithTestId } from 'types/component.types';
+
+interface StandardLayoutProps extends PropsWithClassName, PropsWithTestId {}
+
+const StandardLayout = ({ className, testId = 'layout-standard' }: StandardLayoutProps) => {
   return (
-    <div data-testid="layout-standard" className="px-4 py-4">
+    <div className={classNames('p-4', className)} data-testid={testId}>
       <Outlet />
     </div>
   );
